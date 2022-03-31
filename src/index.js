@@ -11,9 +11,9 @@ app.use("/goodKarts", goodKartsController);
 //--minakshi
 const productController = require("./controllers/product.controllers.js");
 app.use("/vitaminandsupplementproducts", productController); 
-const weightproductController = require("./controllers/weightmanegproduct.controllers");
+const weightproductController = require("./controllers/weightmanegproduct.controllers.js");
 app.use("/weightmanegmentproducts", weightproductController); 
-const sexualwellnessproductController = require("./controllers/sexualwellnessproduct.controllers");
+const sexualwellnessproductController = require("./controllers/sexualwellnessproduct.controllers.js");
 app.use("/sexualwellnessproducts", sexualwellnessproductController); 
 const foodanddrinkproductController = require("./controllers/foodanddrinkproduct.controllers");
 app.use("/foodanddrinkproducts", foodanddrinkproductController); 
