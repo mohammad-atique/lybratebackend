@@ -1,7 +1,7 @@
 const express = require("express");
 
 
-const Product = require("../models/product.models");
+const Product = require("../models/weightmanegproduct.models");
 
 const router = express.Router();
 
@@ -43,7 +43,7 @@ router.patch("/:id",async (req,res)=>{
       
       return res.status(200).send(product)
   } catch (error) {
-      return res.status(500).send({message:error.message})
+      return res.status(500).send({message:error.message});
   }
 });
 
