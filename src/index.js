@@ -9,16 +9,16 @@ app.use(express.json());
 
 app.use("/goodKarts", goodKartsController);
 //--minakshi
-const productController = require("./controllers/product.controllers");
+const productController = require("./controllers/product.controllers.js");
 app.use("/vitaminandsupplementproducts", productController); 
 
 //Soumya
 
-const userController=require("./controllers/user-controller")
+const userController=require("./controllers/user-controller.js")
 app.use("/users",userController)
-const {register,login,newtoken}=require("./controllers/auth-controller")
+const {register,login,newtoken}=require("./controllers/auth-controller.js")
 
-const passport = require("./configs/google-oauth")
+const passport = require("./configs/google-oauth.js")
 
 app.post("/register",register)
 app.post("/login",login)
