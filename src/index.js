@@ -11,6 +11,14 @@ app.use("/goodKarts", goodKartsController);
 //--minakshi
 const productController = require("./controllers/product.controllers.js");
 app.use("/vitaminandsupplementproducts", productController); 
+const weightproductController = require("./controllers/weightmanegproduct.controllers");
+app.use("/weightmanegmentproducts", weightproductController); 
+const sexualwellnessproductController = require("./controllers/sexualwellnessproduct.controllers");
+app.use("/sexualwellnessproducts", sexualwellnessproductController); 
+const foodanddrinkproductController = require("./controllers/foodanddrinkproduct.controllers");
+app.use("/foodanddrinkproducts", foodanddrinkproductController); 
+const childcareproductController = require("./controllers/childcareproduct.controllers");
+app.use("/childcareproducts", childcareproductController); 
 
 //Soumya
 
