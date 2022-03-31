@@ -14,14 +14,14 @@ app.use("/vitaminandsupplementproducts", productController);
 
 //Soumya
 
-// const userController=require("./controllers/user-controller.js")
-// app.use("/users",userController)
-// const {register,login,newtoken}=require("./controllers/auth-controller.js")
+const userController=require("./controllers/user-controller.js")
+app.use("/users",userController)
+const {register,login,newtoken}=require("./controllers/auth-controller.js")
 
-// const passport = require("./configs/google-oauth.js")
+const passport = require("./configs/google-oauth.js")
 
-// app.post("/register",register)
-// app.post("/login",login)
+app.post("/register",register)
+app.post("/login",login)
 
 // app.get('/auth/google',
 //   passport.authenticate('google', { scope:
