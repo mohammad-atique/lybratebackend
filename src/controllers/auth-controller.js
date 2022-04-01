@@ -6,7 +6,7 @@ require('dotenv').config()
 
 const newtoken = (user)=>{
     // console.log(process.env.SECRET_KEY)
-    return jwt.sign({ user }, process.env.SECRET_KEY);
+    return jwt.sign({ user }, "masai");
 }  
 
 //Register
@@ -20,7 +20,7 @@ const register = async(req,res)=>{
         user = await User.create(req.body)
          const token = newtoken(user)
         // const token = jwt.sign({ user }, 'mernstack');
-        return res.status(200).send({user,token})
+        return res.status(200).send({user:user,token:token})
 
     }
     catch(err){
@@ -45,7 +45,7 @@ const login = async(req,res)=>{
         }
         const token = newtoken(user)
         // const token = jwt.sign({ user }, 'mernstack');
-        return res.status(200).send({user,token})
+        return res.status(200).send({user:user,token:token})
 
 
     }
