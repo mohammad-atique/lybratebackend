@@ -9,8 +9,8 @@ const User = require('../models/user-model');
 require("dotenv").config()
 
 passport.use(new GoogleStrategy({
-    clientID:     process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    clientID:     "823053738086-qkmo4h5bliti66ndf93gf3j257e2298n.apps.googleusercontent.com",
+    clientSecret: "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",
     callbackURL: "http://localhost:5000/auth/google/callback",
     passReqToCallback   : true
   },
