@@ -33,7 +33,7 @@ const register = async(req,res)=>{
 const login = async(req,res)=>{
     try{
 
-        const  user = await User.findOne({Phone:req.body.Phone})
+        const  user = await User.findOne({email:req.body.email})
         if(!user){
             return res.status(400).send({message:"Wrong number or password"})
         }
