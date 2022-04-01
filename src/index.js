@@ -1,5 +1,7 @@
 const express = require("express");
 const goodKartsController = require("./controllers/goodKart.controllers.js")
+const sliderController = require("./controllers/slider.controller.js");
+const imagearrController = require("./controllers/imagearr.controller.js")
 
 const cors = require('cors')
 const app = express();
@@ -8,6 +10,9 @@ app.use(express.json());
 
 
 app.use("/goodKarts", goodKartsController);
+app.use("/sliders", sliderController);
+app.use("/imagearrs", imagearrController);
+
 //--minakshi
 const productController = require("./controllers/product.controllers.js");
 app.use("/vitaminandsupplementproducts", productController); 
