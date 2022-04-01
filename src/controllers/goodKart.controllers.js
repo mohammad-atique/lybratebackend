@@ -51,6 +51,15 @@ router.get("/:id", async (req, res) => {
       return res.status(500).send({ message: err.message });
     }
   });
+  router.delete("/:id",async (req,res)=>{
+    try {
+        const goodKart=await GoodKart.findByIdAndDelete(req.params.id).lean().exec()
+        
+        return res.status(200).send(goodKart);
+    } catch (error) {
+        return res.status(500).send({message:error.message})
+    }
+  });
 
 
 module.exports = router;
