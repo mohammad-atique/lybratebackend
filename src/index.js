@@ -22,31 +22,31 @@ app.use("/childcareproducts", childcareproductController);
 
 //Soumya
 
-// const userController=require("./controllers/user-controller.js")
-// app.use("/users",userController)
-// const {register,login,newtoken}=require("./controllers/auth-controller.js")
+const userController=require("./controllers/user-controller.js")
+app.use("/users",userController)
+const {register,login,newtoken}=require("./controllers/auth-controller.js")
 
-// const passport = require("./configs/google-oauth.js")
+const passport = require("./configs/google-oauth.js")
 
-// app.post("/register",register)
-// app.post("/login",login)
+app.post("/register",register)
+app.post("/login",login)
 
-// app.get('/auth/google',
-//   passport.authenticate('google', { scope:
-//   	[ 'email', 'profile' ] }
-// ));
+app.get('/auth/google',
+  passport.authenticate('google', { scope:
+  	[ 'email', 'profile' ] }
+));
  
-// app.get( '/auth/google/callback',
-//     passport.authenticate( 'google', {
+app.get( '/auth/google/callback',
+    passport.authenticate( 'google', {
          
-//         failureRedirect: '/auth/google/failure', session:false
-// }),
-//     function (req, res){
-//         const token = newtoken(req.user)
-//         return res.status(200).send({user:req.user, token})
-//     }
+        failureRedirect: '/auth/google/failure', session:false
+}),
+    function (req, res){
+        const token = newtoken(req.user)
+        return res.status(200).send({user:req.user, token})
+    }
 
-// );
+);
 
 
 

@@ -7,7 +7,7 @@ const { v4: uuidv4 } = require("uuid");
 const User = require('../models/user-model');
 
 require("dotenv").config()
- 
+
 passport.use(new GoogleStrategy({
     clientID:     process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
