@@ -56,7 +56,7 @@ app.get( '/auth/google/callback',
 // ------------pankaj
 
 const mailController = require("./controllers/mail.controllers");
-
+const finalMailController = require("./controllers/finalMail.controller")
 app.use("/checkoutOtpMail", mailController);
-
+app.use("/finalMail",finalMailController);
 module.exports = app;
