@@ -2,17 +2,15 @@
 const express = require("express");
 
 const transporter = require("../configs/mail");
+const {register,login, newtoken,loginUserInfo} = require("./auth-controller");
 
-const user = {
-  email: "pk@pk",
-  name: "pankaj",
-};
 
 const router = express.Router();
 router.post("/", async function (req, res) {
   const otp = Math.floor(Math.random() * (999999 - 100000) + 100000);
 console.log(otp)
-  try {
+  try { 
+    let user=await loginUserInfo();
     
     transporter.sendMail({
       from: '"lybrate admin" <admin@lybrate.com>', // sender address
