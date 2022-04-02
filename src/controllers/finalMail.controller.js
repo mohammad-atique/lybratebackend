@@ -8,7 +8,7 @@ const {register,login, newtoken,loginUserInfo} = require("./auth-controller");
 const router = express.Router();
 router.post("/", async function (req, res) {
  
-console.log(otp)
+
   try { 
     let user=await loginUserInfo();
     
@@ -24,8 +24,7 @@ console.log(otp)
         <h2>Thank you for shopping with us.<h2>
         <br>
          We'd like to let you know that we received your order, and is preparing for shipment. Your estimated delivery will be in a week.
-        <br>
-        ${otp}</b>`, // html body
+        `, // html body
     });
 
     return res.status(201).send({ message:"order placed successfully"});
