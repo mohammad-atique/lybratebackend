@@ -53,12 +53,10 @@ app.get( '/auth/google/callback',
 
 );
 
-
 // ------------pankaj
 
 const mailController = require("./controllers/mail.controllers");
 
 app.use("/checkoutOtpMail", mailController);
-
 
 module.exports = app;
