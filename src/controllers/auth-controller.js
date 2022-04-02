@@ -2,7 +2,7 @@
 const jwt = require("jsonwebtoken")
 const User = require("../models/user-model")
 require('dotenv').config()
-
+var loginUserInfo;
 
 const newtoken = (user)=>{
     // console.log(process.env.SECRET_KEY)
@@ -18,7 +18,7 @@ const register = async(req,res)=>{
             return res.status(400).send({message:"Email already exits"})
         }
         user = await User.create(req.body)
-         const token = newtoken(user)
+         const token = newtoken(user);
         // const token = jwt.sign({ user }, 'mernstack');
         return res.status(200).send({user:user,token:token})
 
@@ -45,6 +45,7 @@ const login = async(req,res)=>{
         }
         const token = newtoken(user)
         // const token = jwt.sign({ user }, 'mernstack');
+        loginUserInfo=user;
         return res.status(200).send({user:user,token:token})
 
 
@@ -53,5 +54,5 @@ const login = async(req,res)=>{
         res.status(500).send(err.message)
     }
 }
-
+module.exports= loginUserInfo;
 module.exports= {register,login, newtoken}
