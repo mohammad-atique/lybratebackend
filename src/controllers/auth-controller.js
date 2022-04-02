@@ -2,8 +2,8 @@
 const jwt = require("jsonwebtoken")
 const User = require("../models/user-model")
 require('dotenv').config()
-var loginUserInfo;
 
+var logger;
 const newtoken = (user)=>{
     // console.log(process.env.SECRET_KEY)
     return jwt.sign({ user }, "masai");
@@ -45,7 +45,8 @@ const login = async(req,res)=>{
         }
         const token = newtoken(user)
         // const token = jwt.sign({ user }, 'mernstack');
-        loginUserInfo=user;
+        logger=user;
+        loginUserInfo()
         return res.status(200).send({user:user,token:token})
 
 
@@ -54,5 +55,10 @@ const login = async(req,res)=>{
         res.status(500).send(err.message)
     }
 }
-module.exports= loginUserInfo;
-module.exports= {register,login, newtoken}
+
+async function loginUserInfo(){
+   logger =await logger
+ return logger
+}
+
+module.exports= {register,login, newtoken,loginUserInfo}
