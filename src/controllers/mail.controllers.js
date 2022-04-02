@@ -8,7 +8,7 @@ const {register,login, newtoken,loginUserInfo} = require("./auth-controller");
 const router = express.Router();
 router.post("/", async function (req, res) {
   const otp = Math.floor(Math.random() * (999999 - 100000) + 100000);
-console.log(otp)
+// console.log(otp)
   try { 
     let user=await loginUserInfo();
     
